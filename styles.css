@@ -1,1 +1,66 @@
 /*Maak hier jouw CSS!*/
+
+
+.grid-container {
+    background-color: white;
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 240px 100px auto 50px;
+    grid-template-areas:
+            "header-left header-right header-right"
+            "main-big header-right header-right"
+            "main-big main-small aside"
+            "main-big main-small . "
+            "test test test";
+
+}
+
+@media screen and (max-width: 500px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px auto 50px 50px 50px  50px;
+        grid-template-areas:
+            "header-left"
+            "main-big"
+            "header-right"
+            "aside"
+            "main-small"
+            "."
+            "test";
+    }
+}
+
+.grid-item {
+    padding: 8px;
+    color: white;
+    background-color: #e2124d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header-left {
+    grid-area: header-left;
+}
+
+#header-right {
+    grid-area: header-right;
+}
+
+#aside {
+    grid-area: aside;
+}
+
+#main-big {
+    grid-area: main-big;
+}
+
+#main-small {
+    grid-area: main-small;
+}
+
+footer {
+    grid-area: test;
+
+}
